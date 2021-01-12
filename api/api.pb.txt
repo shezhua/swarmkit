@@ -22,7 +22,7 @@ file {
     java_package: "com.google.protobuf"
     java_outer_classname: "TimestampProto"
     java_multiple_files: true
-    go_package: "github.com/golang/protobuf/ptypes/timestamp"
+    go_package: "google.golang.org/protobuf/types/known/timestamppb"
     cc_enable_arenas: true
     objc_class_prefix: "GPB"
     csharp_namespace: "Google.Protobuf.WellKnownTypes"
@@ -53,7 +53,7 @@ file {
     java_package: "com.google.protobuf"
     java_outer_classname: "DurationProto"
     java_multiple_files: true
-    go_package: "github.com/golang/protobuf/ptypes/duration"
+    go_package: "google.golang.org/protobuf/types/known/durationpb"
     cc_enable_arenas: true
     objc_class_prefix: "GPB"
     csharp_namespace: "Google.Protobuf.WellKnownTypes"
@@ -157,7 +157,7 @@ file {
     java_package: "com.google.protobuf"
     java_outer_classname: "WrappersProto"
     java_multiple_files: true
-    go_package: "github.com/golang/protobuf/ptypes/wrappers"
+    go_package: "google.golang.org/protobuf/types/known/wrapperspb"
     cc_enable_arenas: true
     objc_class_prefix: "GPB"
     csharp_namespace: "Google.Protobuf.WellKnownTypes"
@@ -483,6 +483,13 @@ file {
       type: TYPE_MESSAGE
       type_name: ".google.protobuf.FieldOptions"
       json_name: "options"
+    }
+    field {
+      name: "proto3_optional"
+      number: 17
+      label: LABEL_OPTIONAL
+      type: TYPE_BOOL
+      json_name: "proto3Optional"
     }
     enum_type {
       name: "Type"
@@ -853,7 +860,7 @@ file {
       number: 31
       label: LABEL_OPTIONAL
       type: TYPE_BOOL
-      default_value: "false"
+      default_value: "true"
       json_name: "ccEnableArenas"
     }
     field {
@@ -1405,7 +1412,7 @@ file {
     java_package: "com.google.protobuf"
     java_outer_classname: "DescriptorProtos"
     optimize_for: SPEED
-    go_package: "github.com/golang/protobuf/protoc-gen-go/descriptor;descriptor"
+    go_package: "google.golang.org/protobuf/types/descriptorpb"
     cc_enable_arenas: true
     objc_class_prefix: "GPB"
     csharp_namespace: "Google.Protobuf.Reflection"
@@ -4494,7 +4501,7 @@ file {
     java_package: "com.google.protobuf"
     java_outer_classname: "AnyProto"
     java_multiple_files: true
-    go_package: "github.com/golang/protobuf/ptypes/any"
+    go_package: "google.golang.org/protobuf/types/known/anypb"
     objc_class_prefix: "GPB"
     csharp_namespace: "Google.Protobuf.WellKnownTypes"
   }
@@ -5088,6 +5095,13 @@ file {
       type: TYPE_MESSAGE
       type_name: ".docker.swarmkit.v1.ContainerSpec.Ulimit"
       json_name: "ulimits"
+    }
+    field {
+      name: "privileged"
+      number: 30
+      label: LABEL_OPTIONAL
+      type: TYPE_BOOL
+      json_name: "privileged"
     }
     nested_type {
       name: "LabelsEntry"
